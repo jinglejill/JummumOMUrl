@@ -17,6 +17,7 @@
 		EF5DC01E2115AAE800FFEA60 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5DC01D2115AAE800FFEA60 /* main.m */; };
 		EF5DC0282115AAE800FFEA60 /* JummumOMUrlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5DC0272115AAE800FFEA60 /* JummumOMUrlTests.m */; };
 		EF5DC0332115AAE800FFEA60 /* JummumOMUrlUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = EF5DC0322115AAE800FFEA60 /* JummumOMUrlUITests.m */; };
+		EF5DC0412115AB1800FFEA60 /* JummumOM Url in Resources */ = {isa = PBXBuildFile; fileRef = EF5DC0402115AB1700FFEA60 /* JummumOM Url */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		EF5DC02E2115AAE800FFEA60 /* JummumOMUrlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JummumOMUrlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5DC0322115AAE800FFEA60 /* JummumOMUrlUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JummumOMUrlUITests.m; sourceTree = "<group>"; };
 		EF5DC0342115AAE800FFEA60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF5DC0402115AB1700FFEA60 /* JummumOM Url */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "JummumOM Url"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		EF5DBFFC2115AAE600FFEA60 = {
 			isa = PBXGroup;
 			children = (
+				EF5DC0402115AB1700FFEA60 /* JummumOM Url */,
 				EF5DC0072115AAE600FFEA60 /* JummumOMUrl */,
 				EF5DC0262115AAE800FFEA60 /* JummumOMUrlTests */,
 				EF5DC0312115AAE800FFEA60 /* JummumOMUrlUITests */,
@@ -247,6 +250,7 @@
 			files = (
 				EF5DC01B2115AAE800FFEA60 /* LaunchScreen.storyboard in Resources */,
 				EF5DC0182115AAE800FFEA60 /* Assets.xcassets in Resources */,
+				EF5DC0412115AB1800FFEA60 /* JummumOM Url in Resources */,
 				EF5DC0162115AAE600FFEA60 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

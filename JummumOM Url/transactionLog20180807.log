@@ -1,0 +1,7 @@
+2018-08-07T23:59:30+07:00 file: JMSUserAccountValidate.php, user: Doctor
+2018-08-07T23:59:30+07:00 Param=Value: modifiedUser=Doctor&userAccountID=0&lineID=&birthDate=&deviceToken=&password=6805c7842f70035f831446a2a1b86431047d6debf8ce7f702a001a543473295c&fullName=&nickName=&roleID=0&username=Doctor&phoneNo=&modifiedDate=2018-08-07 09:59:45  0000&email=&logInID=1&status=1&modifiedDeviceToken=(null)&branchID=0&actionScreen=validate userAccount&
+2018-08-07T23:59:30+07:00 set auto commit to off
+2018-08-07T23:59:30+07:00 query: selected row count = 0, sql: select * from JUMMUM_OM.UserAccount where username = 'Doctor' and password = '6805c7842f70035f831446a2a1b86431047d6debf8ce7f702a001a543473295c', modified user: Doctor
+2018-08-07T23:59:30+07:00 sql = select * from JUMMUM_OM.UserAccount where 0
+2018-08-07T23:59:30+07:00 multiQueryArray: select * from JUMMUM_OM.UserAccount where 0
+2018-08-07T23:59:30+07:00 query commit, file: JMSUserAccountValidate.php, user: Doctor
