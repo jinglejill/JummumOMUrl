@@ -71,7 +71,6 @@
     $contentAvailable = 1;
     $data = null;
     sendPushNotificationAdmin($arrPushSyncDeviceTokenAdmin,$title,$msg,$category,$contentAvailable,$data);
-//    sendPushNotificationToDeviceWithMsg($pushSyncDeviceTokenAdmin,$msg);
     
     
     

@@ -87,7 +87,6 @@
     $contentAvailable = 1;
     $data = array("settingID" => $settingID);
     sendPushNotificationJummumOM($pushSyncDeviceTokenReceiveOrder,$title,$msg,$category,$contentAvailable,$data);
-//    sendPushNotificationToDeviceWithPath($pushSyncDeviceTokenReceiveOrder,'./','jill',$msg,$settingID,$category,1);
     
     
     
