@@ -22,8 +22,10 @@
     }
     
     
+    $sql = "select * from $jummumOM.branch where branchID = '$branchID'";
+    $selectedRow = getSelectedRow($sql);
+    $dbName = $selectedRow[0]["DbName"];
     
-   
     
     $sql = "select receipt.* from receipt where branchID = '$branchID' and status = '$status' and (receiptDate < '$receiptDate' or (receiptDate = '$receiptDate' and receipt.receiptID < '$receiptID')) order by receipt.ReceiptDate DESC, receipt.ReceiptID DESC limit 20;";
     $selectedRow = getSelectedRow($sql);
@@ -47,17 +49,15 @@
         
         
         $sql .= "select * from OrderTaking where receiptID in ($receiptIDListInText);";
-        $sql .= "select * from OrderNote where orderTakingID in (select orderTakingID from OrderTaking where receiptID in ($receiptIDListInText));";
+        $sql .= "select * from OrderNote where orderTakingID in (select orderTakingID from OrderTaking where receiptID in ($receiptIDListInText));";        
     }
     else
     {
-        $sql .= "select * from OrderTaking where 0;";
-        $sql .= "select * from OrderNote where 0;";        
+//        $sql .= "select 0 from dual where 0;";
+//        $sql .= "select 0 from dual where 0;";
+//        $sql .= "select 0 from dual where 0;";
+//        $sql .= "select 0 from dual where 0;";
     }
-    
-    
-    
-    
     
     
     
@@ -66,8 +66,9 @@
     
     
     /* execute multi query */
-    $jsonEncode = executeMultiQuery($sql);
-    echo $jsonEncode;
+    $jsonEncode = executeMultiQueryArray($sql);
+    $response = array('success' => true, 'data' => $jsonEncode, 'error' => null, 'status' => 1);
+    echo json_encode($response);
     
     
     

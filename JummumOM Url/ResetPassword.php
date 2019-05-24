@@ -51,7 +51,7 @@ function validateForm()
 </script>
 </head>
 <body text="#FFFFFF" style="background-color:#FF3C4B">
-<p>&nbsp;<img class="" src="http://www.jummum.co/<?=$jummumOMPath?>Image/jummumOMLogo.png" alt="" width="120" /></p>
+<p>&nbsp;<img class="" src="./Image/jummumOMLogo.png" alt="" width="120" /></p>
 <form name="resetPasswordForm" action="./resetpassword.php?codereset=<?=$_GET['codereset']?>" onsubmit="return validateForm()" method="post">
 <p>&nbsp;</p>
 <p>รหัสผ่านใหม่:<br /><input name="password" type="password" /></p>
@@ -122,7 +122,7 @@ function validateForm()
             
             if(time()-StrToTime($requestDate) > 2*60*60)//2 hours
             {
-                header("Location: http://www.jummum.co/" . $jummumOMPath . "ResetPasswordTimeOut.php");
+                header("Location: ./ResetPasswordTimeOut.php");
                 //                echo "ไม่สามารถรีเซ็ตรหัสผ่านได้ กรุณาส่งคำขอเปลี่ยนรหัสผ่านอีกครั้งหนึ่ง";
             }
             else

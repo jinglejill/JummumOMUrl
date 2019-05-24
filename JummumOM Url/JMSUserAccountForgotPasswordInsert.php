@@ -1,4 +1,8 @@
 <?php
+    $fullPath = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $posLastSlash = strripos($fullPath,'/');
+?>
+<?php
     include_once("dbConnect.php");
     setConnectionValue("");
     writeToLog("file: " . basename(__FILE__) . ", user: " . $_POST["modifiedUser"]);
@@ -51,7 +55,7 @@
         $codeReset = password_hash($username . $requestDate . $randomString, PASSWORD_DEFAULT);//
         $emailBody = file_get_contents('./HtmlEmailTemplateForgotPassword.php');
         $emailBody = str_replace("#codereset#",$codeReset,$emailBody);
-        
+        $emailBody = str_replace("#jummumFilePath#",substr($fullPath,0,$posLastSlash),$emailBody);
         
         
         

@@ -1,13 +1,20 @@
 <?php
     include_once('dbConnect.php');
-    setConnectionValue("JUMMUM_OM");
+    setConnectionValue("");
+    
+    $contentAvailable = 1;
+    $receiptID = 2;
+    $data = null;
     $arrBody = array(
                      'alert' => 'test'//ข้อความ
                       ,'sound' => 'default'//,//เสียงแจ้งเตือน
 //                      ,'badge' => 3 //ขึ้นข้อความตัวเลขที่ไม่ได้อ่าน
                      ,'category' => 'Print'
+//                     ,'data' => $data
+                     ,'content-available' => $contentAvailable
+                     ,'receiptID' => $receiptID
                       );
-    sendTestApplePushNotification('8ef52f0f227e938b7b5ba414fe0ea88866229a2cf36fe002ebaf96a3a27779fc',$arrBody);
+    sendPushNotificationWithPath('d4ab5cd3e06c0b840795e5112a5bba4489550f0a3c5af4ab4194625048deb23c',$arrBody,'','jill');
     
 //    sleep(5);
 //

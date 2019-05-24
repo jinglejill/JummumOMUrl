@@ -5,20 +5,15 @@
     printAllPost();
     ini_set("memory_limit","-1");
     
-
-    
-    
     
     if(isset($_POST["branchID"]))
     {
         $branchID = $_POST["branchID"];
     }
-    if(isset($_POST["modifiedDate"]))
+    if(isset($_POST["maxModifiedDate"]))
     {
-        $modifiedDate = $_POST["modifiedDate"];
+        $maxModifiedDate = $_POST["maxModifiedDate"];
     }
-    
-    
     
     
     // Check connection
@@ -28,9 +23,8 @@
     }
     
     
-    
     //**** Receipt, OrderTaking, OrderNote, Dispute
-    $sql2 = "select * from receipt where branchID = '$branchID' and modifiedDate >= '$modifiedDate';";
+    $sql2 = "select * from receipt where branchID = '$branchID' and modifiedDate >= '$maxModifiedDate';";
     $selectedRow = getSelectedRow($sql2);
     
     
@@ -74,8 +68,9 @@
     
     
     /* execute multi query */
-    $jsonEncode = executeMultiQuery($sql);
-    echo $jsonEncode;
+    $jsonEncode = executeMultiQueryArray($sql);
+    $response = array('success' => true, 'data' => $jsonEncode, 'error' => null, 'status' => 1);
+    echo json_encode($response);
 
 
     

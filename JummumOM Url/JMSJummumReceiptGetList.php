@@ -28,16 +28,17 @@
     
     
     
-    $sql = "select '$branchID' BranchID, Receipt.* from Receipt where ReceiptID = '$receiptID';";
-    $sql .= "select '$branchID' BranchID, OrderTaking.* from OrderTaking where ReceiptID = '$receiptID';";
-    $sql .= "select '$branchID' BranchID, OrderNote.* from OrderNote where OrderTakingID in (select orderTakingID from OrderTaking where ReceiptID = '$receiptID');";
+    $sql = "select Receipt.* from Receipt where ReceiptID = '$receiptID';";
+    $sql .= "select OrderTaking.* from OrderTaking where ReceiptID = '$receiptID';";
+    $sql .= "select OrderNote.* from OrderNote where OrderTakingID in (select orderTakingID from OrderTaking where ReceiptID = '$receiptID');";
     $sql .= "select Dispute.* from Dispute where ReceiptID = '$receiptID';";
     writeToLog($sql);
     
     
     /* execute multi query */
-    $jsonEncode = executeMultiQuery($sql);
-    echo $jsonEncode;
+    $jsonEncode = executeMultiQueryArray($sql);
+    $response = array('success' => true, 'data' => $jsonEncode, 'error' => null, 'status' => 1);
+    echo json_encode($response);
     
     
     

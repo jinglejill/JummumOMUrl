@@ -30,8 +30,9 @@
     
     
     /* execute multi query */
-    $jsonEncode = executeMultiQuery($sql);
-    echo $jsonEncode;
+    $jsonEncode = executeMultiQueryArray($sql);
+    $response = array('success' => true, 'data' => $jsonEncode, 'error' => null, 'status' => 1);
+    echo json_encode($response);
 
 
     
